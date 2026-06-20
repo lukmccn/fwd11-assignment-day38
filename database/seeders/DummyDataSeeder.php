@@ -128,45 +128,6 @@ class DummyDataSeeder extends Seeder
             'enrolled_count' => 1,
         ]);
 
-        // ----------------
-        // ENROLLMENTS
-        // ----------------
-        Enrollment::create([
-            'user_id' => $student1->id,
-            'course_id' => $course1->id,
-            'enrolled_at' => now()->subDays(7),
-            'progress' => 60.00,
-            'status' => 'active',
-            'updated_at' => now()->subDays(1),
-        ]);
-
-        Enrollment::create([
-            'user_id' => $student1->id,
-            'course_id' => $course2->id,
-            'enrolled_at' => now()->subDays(3),
-            'progress' => 20.00,
-            'status' => 'active',
-            'updated_at' => now()->subHours(5),
-        ]);
-
-        Enrollment::create([
-            'user_id' => $student2->id,
-            'course_id' => $course1->id,
-            'enrolled_at' => now()->subDays(2),
-            'progress' => 10.00,
-            'status' => 'active',
-            'updated_at' => now(),
-        ]);
-
-        Enrollment::create([
-            'user_id' => $student2->id,
-            'course_id' => $course3->id,
-            'enrolled_at' => now()->subDays(1),
-            'progress' => 0.00,
-            'status' => 'active',
-            'updated_at' => now(),
-        ]);
-
         $this->command->info('Data dummy LMS berhasil dibuat!');
         $this->command->table(
             ['Tabel', 'Jumlah'],
@@ -175,7 +136,6 @@ class DummyDataSeeder extends Seeder
                 ['Instructor Profiles', '2'],
                 ['Course Categories', '3'],
                 ['Courses', '3'],
-                ['Enrollments', '4'],
             ]
         );
     }
